@@ -25,6 +25,11 @@ class GreatestCommonDivisorTests(unittest.TestCase):
     def test_not_coprime(self):
         self.assertNotEqual(elgamal.gcd(10, 20), 1)
 
+    def test_find_primitive_root(self):
+        self.assertIn(elgamal.find_primitive_root(7), [3, 5])
+        self.assertIn(elgamal.find_primitive_root(11), [2, 6, 7, 8])
+        self.assertIn(elgamal.find_primitive_root(43), [3, 5, 12, 18, 19, 20, 26, 28, 29, 30, 33, 34])
+
 
 if __name__ == '__main__':
     unittest.main()
